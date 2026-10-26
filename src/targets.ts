@@ -22,9 +22,16 @@ export const TARGETS: HideTarget[] = [
   },
   {
     id: "tabBar",
-    name: "Tab bar",
-    desc: "Hide the tab headers above each pane.",
-    selector: ".workspace-tabs .workspace-tab-header-container",
+    name: "Tabs",
+    desc: "Hide the note tabs and the new-tab button.",
+    selector: ".mod-root .workspace-tab-header-container-inner",
+  },
+  {
+    id: "topBar",
+    name: "Top bar buttons",
+    desc: "Hide the sidebar tab icons, the sidebar toggles and the tab list dropdown.",
+    selector:
+      ".mod-left-split .workspace-tab-header-container, .mod-right-split .workspace-tab-header-container, .mod-root .workspace-tab-header-tab-list, .sidebar-toggle-button",
   },
   {
     id: "viewHeader",

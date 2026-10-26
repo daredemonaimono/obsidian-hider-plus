@@ -31,9 +31,12 @@ export default class HiderPlus extends Plugin {
       el.id = STYLE_ID;
       document.head.appendChild(el);
     }
-    el.textContent = TARGETS.filter((t) => this.settings[t.id])
-      .map((t) => `${t.selector} { display: none !important; }`)
-      .join("\n");
+    const rules = TARGETS.filter((t) => this.settings[t.id]).map((t) => `${t.selector} { display: none !important; }`);
+    // With tabs and top bar buttons both hidden, collapse the empty header line too.
+    if (this.settings.tabBar && this.settings.topBar) {
+      rules.push(".mod-root .workspace-tab-header-container { display: none !important; }");
+    }
+    el.textContent = rules.join("\n");
   }
 }
 
