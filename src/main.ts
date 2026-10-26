@@ -67,7 +67,7 @@ export default class HiderPlus extends Plugin {
         ".mod-left-split .workspace-tab-header-container, .mod-right-split .workspace-tab-header-container { display: none !important; }"
       );
     }
-    if (hide.tabBar && sidebarHeaderGone) {
+    if (hide.tabBar && hide.tabList && hide.sidebarToggle) {
       rules.push(".mod-root .workspace-tab-header-container { display: none !important; }");
     }
     // The explorer's button row doubles as the spacer next to the window buttons.

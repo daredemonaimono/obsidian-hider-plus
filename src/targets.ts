@@ -40,11 +40,20 @@ export const TARGETS: HideTarget[] = [
     id: "topBar",
     name: { en: "Top bar buttons", ja: "トップバーのボタン" },
     desc: {
-      en: "Hide the sidebar tab icons and the tab list dropdown.",
-      ja: "サイドバーのアイコン列とタブ一覧の「▾」を隠します。",
+      en: "Hide the sidebar tab icons.",
+      ja: "サイドバーのアイコン列を隠します。",
     },
     selector:
-      ".mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner, .workspace-tab-header-tab-list",
+      ".mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner",
+  },
+  {
+    id: "tabList",
+    name: { en: "Tab list dropdown", ja: "タブ一覧ボタン(▾)" },
+    desc: {
+      en: "Hide the ▾ button that lists all open tabs.",
+      ja: "開いているタブの一覧を出す「▾」ボタンだけを隠します。",
+    },
+    selector: ".workspace-tab-header-tab-list",
   },
   {
     id: "sidebarToggle",
