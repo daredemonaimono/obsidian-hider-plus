@@ -36,6 +36,15 @@ export default class HiderPlus extends Plugin {
     if (this.settings.tabBar && this.settings.topBar) {
       rules.push(".mod-root .workspace-tab-header-container { display: none !important; }");
     }
+    // The explorer's button row doubles as the spacer next to the window buttons.
+    // Once the sidebar header and that row are both gone, keep the file list below the window buttons.
+    const navIds = ["navNewNote", "navNewFolder", "navSort", "navAutoReveal", "navCollapseAll"];
+    const navRowGone = this.settings.navButtons || navIds.every((id) => this.settings[id]);
+    if (this.settings.topBar && navRowGone) {
+      rules.push(
+        '.workspace-leaf-content[data-type="file-explorer"] .nav-files-container { margin-top: var(--header-height, 40px) !important; }'
+      );
+    }
     el.textContent = rules.join("\n");
   }
 }
