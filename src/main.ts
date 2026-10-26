@@ -60,15 +60,21 @@ export default class HiderPlus extends Plugin {
       document.head.appendChild(el);
     }
     const rules = TARGETS.filter((t) => hide[t.id]).map((t) => t.css ?? `${t.selector} { display: none !important; }`);
-    // With tabs and top bar buttons both hidden, collapse the empty header line too.
-    if (hide.tabBar && hide.topBar) {
+    // Collapse header lines that have nothing left in them.
+    const sidebarHeaderGone = hide.topBar && hide.sidebarToggle;
+    if (sidebarHeaderGone) {
+      rules.push(
+        ".mod-left-split .workspace-tab-header-container, .mod-right-split .workspace-tab-header-container { display: none !important; }"
+      );
+    }
+    if (hide.tabBar && sidebarHeaderGone) {
       rules.push(".mod-root .workspace-tab-header-container { display: none !important; }");
     }
     // The explorer's button row doubles as the spacer next to the window buttons.
     // Once the sidebar header and that row are both gone, keep the file list below the window buttons.
     const navIds = TARGETS.filter((t) => t.parent === "navButtons").map((t) => t.id);
     const navRowGone = hide.navButtons || navIds.every((id) => hide[id]);
-    if (hide.topBar && navRowGone) {
+    if (sidebarHeaderGone && navRowGone) {
       rules.push(
         '.workspace-leaf-content[data-type="file-explorer"] .nav-files-container { margin-top: var(--header-height, 40px) !important; }'
       );
