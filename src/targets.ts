@@ -44,7 +44,7 @@ export const TARGETS: HideTarget[] = [
       ja: "サイドバーのアイコン列とタブ一覧の「▾」を隠します。",
     },
     selector:
-      ".mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner, .mod-root .workspace-tab-header-tab-list",
+      ".mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner, .workspace-tab-header-tab-list",
   },
   {
     id: "sidebarToggle",
