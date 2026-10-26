@@ -4,6 +4,8 @@ export interface HideTarget {
   desc: string;
   /** CSS selector(s) to hide while the toggle is on. */
   selector: string;
+  /** Full CSS to use instead of `selector { display: none }`. */
+  css?: string;
 }
 
 // Add one entry here to add one more thing that can be hidden.
@@ -18,7 +20,7 @@ export const TARGETS: HideTarget[] = [
     id: "ribbon",
     name: "Ribbon",
     desc: "Hide the left icon bar.",
-    selector: ".workspace-ribbon.mod-left",
+    selector: ".workspace-ribbon.mod-left, .side-dock-ribbon",
   },
   {
     id: "tabBar",
@@ -56,6 +58,7 @@ export const TARGETS: HideTarget[] = [
     name: "Scrollbars",
     desc: "Hide scrollbars everywhere.",
     selector: "*::-webkit-scrollbar",
+    css: "* { scrollbar-width: none !important; } *::-webkit-scrollbar, *::-webkit-scrollbar-thumb { display: none !important; width: 0 !important; height: 0 !important; }",
   },
   {
     id: "vaultTitle",
