@@ -36,6 +36,42 @@ export const TARGETS: HideTarget[] = [
       ".mod-left-split .workspace-tab-header-container, .mod-right-split .workspace-tab-header-container, .mod-root .workspace-tab-header-tab-list, .sidebar-toggle-button",
   },
   {
+    id: "navButtons",
+    name: "File explorer: all buttons",
+    desc: "Hide the whole button row at the top of the file explorer.",
+    selector: '.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container',
+  },
+  {
+    id: "navNewNote",
+    name: "File explorer: New note",
+    desc: "Hide the \"New note\" button in the file explorer.",
+    selector: '.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container > :nth-child(1)',
+  },
+  {
+    id: "navNewFolder",
+    name: "File explorer: New folder",
+    desc: "Hide the \"New folder\" button in the file explorer.",
+    selector: '.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container > :nth-child(2)',
+  },
+  {
+    id: "navSort",
+    name: "File explorer: Change sort order",
+    desc: "Hide the \"Change sort order\" button in the file explorer.",
+    selector: '.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container > :nth-child(3)',
+  },
+  {
+    id: "navAutoReveal",
+    name: "File explorer: Auto-reveal current file",
+    desc: "Hide the \"Auto-reveal current file\" button in the file explorer.",
+    selector: '.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container > :nth-child(4)',
+  },
+  {
+    id: "navCollapseAll",
+    name: "File explorer: Expand / collapse all",
+    desc: "Hide the \"Expand / collapse all\" button in the file explorer.",
+    selector: '.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container > :nth-child(5)',
+  },
+  {
     id: "viewHeader",
     name: "Note header",
     desc: "Hide the title bar and buttons at the top of each note.",
