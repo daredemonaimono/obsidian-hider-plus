@@ -1,6 +1,6 @@
 {
   "name": "obsidian-hider-plus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Obsidian plugin: hide more parts of the interface with simple toggles.",
   "main": "main.js",
   "scripts": {

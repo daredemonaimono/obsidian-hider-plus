@@ -1,7 +1,7 @@
 {
   "id": "hider-plus",
   "name": "Hider Plus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "minAppVersion": "1.4.0",
   "description": "Hide more parts of the Obsidian interface with simple toggles.",
   "author": "daredemonaimono",
